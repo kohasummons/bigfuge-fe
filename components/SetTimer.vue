@@ -34,13 +34,26 @@ const defaultOptions = computed(() => getTimerRange());
 
 <style>
 .vue-scroll-picker{
-    @apply h-[550px]
+    @apply h-[350px]
 }
 
 /*  Itmems */
 .vue-scroll-picker-item{
-    @apply text-8xl text-[#b3b3b3]
+    @apply text-[#b3b3b3] text-6xl
 }
+
+
+@media (min-width: 768px) {
+    .vue-scroll-picker{
+        @apply h-[550px]
+    }
+
+    .vue-scroll-picker-item{
+        @apply text-8xl
+    }
+ }
+
+
 .vue-scroll-picker-item-selected{
     transform: scale(1.15);
     transition: all;

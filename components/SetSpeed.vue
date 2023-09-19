@@ -34,13 +34,34 @@ const defaultOptions = computed(() => getRPMRange());
 
 <style>
 .vue-scroll-picker{
-    @apply h-[550px]
+    @apply h-[450px]
 }
 
 /*  Itmems */
 .vue-scroll-picker-item{
-    @apply text-8xl text-[#b3b3b3]
+    @apply text-[#b3b3b3] text-5xl
 }
+
+
+@media (min-width: 768px) {
+    .vue-scroll-picker{
+        @apply h-[550px]
+    }
+
+    .vue-scroll-picker-item{
+        @apply text-8xl
+    }
+
+    .vue-scroll-picker-layer-top{
+        height: calc(50% - 3em)!important;
+    }
+
+    .vue-scroll-picker-layer-bottom{
+        height: calc(50% - 3em)!important;
+    }    
+ }
+
+
 .vue-scroll-picker-item-selected{
     transform: scale(1.15);
     transition: all;
@@ -51,7 +72,7 @@ const defaultOptions = computed(() => getRPMRange());
 /* Items before selected */
 .vue-scroll-picker-item:has(+ .vue-scroll-picker-item-selected){
     color: #b6b6b6;
-    opacity: .9;
+    opacity: .8;
     transition: all;
     transition-duration: 700ms;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -60,7 +81,7 @@ const defaultOptions = computed(() => getRPMRange());
 /* Items after selected */
 .vue-scroll-picker-item-selected + .vue-scroll-picker-item {
     color: #b6b6b6;
-    opacity: .9;
+    opacity: .8;
     transition: all;
     transition-duration: 700ms;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -69,7 +90,7 @@ const defaultOptions = computed(() => getRPMRange());
 /* Layers */
 .vue-scroll-picker-layer-top{
     border: none;
-    height: calc(50% - 3em);
+    height: calc(50% - 2.5em) !important;
     background: linear-gradient(180deg, #ECECEC 50%,#efececbb);
     backdrop-filter: blur(15);
     -webkit-backdrop-filter: blur(15);
@@ -80,7 +101,7 @@ const defaultOptions = computed(() => getRPMRange());
 
 .vue-scroll-picker-layer-bottom{
     border: none;
-    height: calc(50% - 3em);
+    height: calc(50% - 2.5em)!important;
     background: linear-gradient(0, #ECECEC 10%,#efececbb);
     backdrop-filter: blur(15);
     -webkit-backdrop-filter: blur(15);

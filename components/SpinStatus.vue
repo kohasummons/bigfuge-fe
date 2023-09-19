@@ -30,7 +30,7 @@ const handleStop = () => {
         <h1 class="text-3xl text-center text-[#B3B3B3] tracking-tight font-medium">Spin</h1>
     </header>
     <section class="w-full">
-        <div class="flex items-center justify-center py-10">
+        <div class="flex items-center justify-center md:py-10 py-8">
             <p class="md:text-[200px] text-[150px] leading-tight text-center text-[#B3B3b3]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="3" fill="#888888" />
@@ -50,7 +50,7 @@ const handleStop = () => {
         </div>
     </section>
     <section>
-        <div class="mt-12 grid grid-cols-2 gap-x-2 gap-y-2">
+        <div class="md:mt-12 mt-4 grid grid-cols-2 gap-x-2 gap-y-2">
             <div v-for="status in statusList" :key="status.type"
                 class="bg-[#E0E0E0] opacity-90 rounded-lg h-32 p-2 flex flex-col items-start justify-between">
                 <p class="text-base font-normal tracking-[-3.5%] text-[#B3B3B3]">{{ status.type }}</p>
