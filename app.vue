@@ -4,6 +4,6 @@
 <style>
 body{
     background-color: #ECECEC;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 </style>

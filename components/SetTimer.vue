@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const {spinTime_min, spinTime_sec, next, back} = useSetSpinner();
+const {spinTime_min, spinTime_sec} = useSetSpinner();
 
 const getTimerRange = () => {
     const range = [];
