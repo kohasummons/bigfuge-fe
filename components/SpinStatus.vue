@@ -1,14 +1,16 @@
 <script setup>
 const router = useRouter();
+const { spinTime_min, spinTime_sec, spinRPM, setActiveIndex } = useSetSpinner();
+import VueCountdown from '@chenfengyuan/vue-countdown';
 
 const statusList = ref([
     {
         type: 'Duration(Min)',
-        value: "4.5"
+        value: (spinTime_min.value + spinTime_sec.value / 60).toFixed(2)
     },
     {
         type: 'Spin Speed (RPM)',
-        value: "500"
+        value: spinRPM
     },
     {
         type: 'Connectivity',
@@ -16,11 +18,14 @@ const statusList = ref([
     },
     {
         type: 'Battery',
-        value: "70%"
+        value: "80%"
     }
 ]);
 
+const time = computed(() => Number(statusList.value[0].value)*60000)
+
 const handleStop = () => {
+    setActiveIndex(0);
     router.push('/');
 }
 </script>
@@ -44,10 +49,12 @@ const handleStop = () => {
                 </svg>
             </p>
         </div>
-        <div class="mt-4 flex flex-row items-center justify-center gap-4">
-            <p class="text-[#B3B3B3] text-7xl tracking-tight font-medium">30<span class="text-xl">Min</span></p>
-            <p class="text-[#B3B3B3] text-7xl tracking-tight font-medium">43<span class="text-xl">Sec</span></p>
-        </div>
+        <vue-countdown :time="time" :interval="100" v-slot="{ minutes, seconds}">
+            <div class="mt-4 flex flex-row items-center justify-center gap-4">
+                <p class="text-[#B3B3B3] text-7xl tracking-tight font-medium">{{ minutes }}<span class="text-xl">Min</span></p>
+                <p class="text-[#B3B3B3] text-7xl tracking-tight font-medium">{{seconds}}<span class="text-xl">Sec</span></p>
+            </div>
+        </Vue-countdown>
     </section>
     <section>
         <div class="md:mt-12 mt-4 grid grid-cols-2 gap-x-2 gap-y-2">
@@ -57,10 +64,11 @@ const handleStop = () => {
                 <p class="text-6xl tracking-[-3.5%] text-[#B3B3B3]">{{ status.value }}</p>
             </div>
         </div>
-</section>
-<section>
-    <div class="mt-2">
-        <button type="button" @click="handleStop"
-            class="hover:opacity-90 transition select-none duration-300 cursor-pointer py-4 bg-[#e64717] text-center text-2xl font-bold tracking-[-3.5] text-[#f1f1f1] px-6 w-full rounded-lg">Stop</button>
-    </div>
-</section></template>
+    </section>
+    <section>
+        <div class="mt-2">
+            <button type="button" @click="handleStop"
+                class="hover:opacity-90 transition select-none duration-300 cursor-pointer py-4 bg-[#e64717] text-center text-2xl font-bold tracking-[-3.5] text-[#f1f1f1] px-6 w-full rounded-lg">Stop</button>
+        </div>
+    </section>
+</template>

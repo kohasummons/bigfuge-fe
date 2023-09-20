@@ -1,6 +1,5 @@
 <script setup lang="ts">
-const {spinRPM, next} = useSetSpinner();
-
+const {spinRPM} = useSetSpinner();
 const getRPMRange = () => {
     const range = [];
 
@@ -21,7 +20,7 @@ const defaultOptions = computed(() => getRPMRange());
 <template>
     <div class="h-[90vh] flex flex-col justify-between">
         <div>
-            <header class="m-14">
+            <header class="md:mt-14 mt-8">
                 <h1 class="text-3xl text-center text-[#B3B3B3] tracking-tight font-medium">Set Speed (RPM)</h1>
             </header>
             <div>

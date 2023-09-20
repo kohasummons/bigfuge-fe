@@ -1,14 +1,14 @@
+const spinRPM = ref({ value: 800, name: '800' });
+const spinTime_min = ref({ value: 10, name: '10' });
+const spinTime_sec = ref({ value: 10, name: '10' });
+const activeIndex = ref(0);
+
 export const useSetSpinner = () => {
     const spinnerSettingsComponentsList = [
         'setSpeed',
         'setTimer',
         'spinStatus'
     ]
-
-    const spinRPM = ref({ value: 800, name: '800' })
-    const spinTime_min = ref({ value: 10, name: '10' });
-    const spinTime_sec = ref({ value: 10, name: '10' });
-    const activeIndex = ref(0);
 
     const isFirstComponent = computed(()=>activeIndex.value === 0)
     const isSecondComponent = computed(()=>activeIndex.value === 1)
@@ -30,6 +30,10 @@ export const useSetSpinner = () => {
         console.log(activeIndex.value)
     }
 
+    const setActiveIndex = (index: number) => {
+        activeIndex.value = index;
+    }
+
     return {
         spinRPM,
         spinTime_min,
@@ -40,5 +44,6 @@ export const useSetSpinner = () => {
         isLastComponent,
         back,
         next,
+        setActiveIndex
     }
 }

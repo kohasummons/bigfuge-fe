@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const {spinTime_min, spinTime_sec} = useSetSpinner();
+const {spinTime_min, spinTime_sec, spinRPM} = useSetSpinner();
+
 
 const getTimerRange = () => {
     const range = [];
@@ -20,7 +21,7 @@ const defaultOptions = computed(() => getTimerRange());
 <template>
     <div class="h-[90vh] flex flex-col justify-between">
         <div>
-            <header class="mt-14">
+            <header class="md:mt-14 mt-8">
                 <h1 class="text-3xl text-center text-[#B3B3B3] tracking-tight font-medium">Set Timer (min, sec)</h1>
             </header>
             <div class="flex flex-row">

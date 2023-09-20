@@ -40,17 +40,17 @@ const handleSpin = () => {
         <section>
             <div class="mt-5">
                 <h2 class="text-[#BDBDBD] font-['SF Pro Display'] text-2xl font-bold tracking-[-3.5] leading-[104.1%]">Good
-                    Morning, <br /> James</h2>
+                    Morning, <br /> James 💫</h2>
             </div>
         </section>
         <section>
-            <div class="mt-14">
+            <div class="md:mt-14 mt-10">
                 <h4 class="text-2xl text-[#D0D0D0] font-medium">Status</h4>
                 <div class="mt-2 grid grid-cols-2 gap-x-2 gap-y-2">
                     <div v-for="status in statusList" :key="status.type"
-                        class="bg-[#E0E0E0] rounded-lg h-32 p-2 flex flex-col items-start justify-between">
+                        class="bg-[#E0E0E0] rounded-lg md:h-32 h-28 p-2 flex flex-col items-start justify-between">
                         <p class="text-base font-normal tracking-[-3.5%] text-[#B3B3B3]">{{ status.type }}</p>
-                        <p class="text-6xl font-bold tracking-[-3.5%] text-[#B3B3B3]">{{ status.value }}</p>
+                        <p class="md:text-6xl text-5xl font-bold tracking-[-3.5%] text-[#B3B3B3]">{{ status.value }}</p>
                     </div>
                 </div>
             </div>
