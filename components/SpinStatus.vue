@@ -49,7 +49,7 @@ const handleStop = () => {
                 </svg>
             </p>
         </div>
-        <vue-countdown :time="time" :interval="100" v-slot="{ minutes, seconds}">
+        <vue-countdown @end="router.push('/spincompleted')" :time="time" :interval="100" v-slot="{ minutes, seconds}">
             <div class="mt-4 flex flex-row items-center justify-center gap-4">
                 <p class="text-[#B3B3B3] text-7xl tracking-tight font-medium">{{ minutes }}<span class="text-xl">Min</span></p>
                 <p class="text-[#B3B3B3] text-7xl tracking-tight font-medium">{{seconds}}<span class="text-xl">Sec</span></p>

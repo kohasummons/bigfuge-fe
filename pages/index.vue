@@ -26,7 +26,7 @@ const handleSpin = () => {
 </script>
 
 <template>
-    <main class="bg-[#ECECEC] px-3 max-w-md mx-auto lg:py-10 py-3 relative h-screen">
+    <main class="bg-[#ECECEC] px-3 max-w-md mx-auto lg:py-10 py-3 relative h-[90vh]">
         <header class="flex justify-between items-center">
             <div>
                 <h1 class="text-['SF Pro Display'] text-xl font-medium text-[#B3B3B3]">BigFuge</h1>

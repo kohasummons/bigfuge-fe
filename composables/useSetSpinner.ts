@@ -19,7 +19,6 @@ export const useSetSpinner = () => {
             activeIndex.value = spinnerSettingsComponentsList.length - 1
         }
         activeIndex.value++ 
-        console.log(activeIndex.value)
     }
 
     const back = () => {
@@ -27,7 +26,6 @@ export const useSetSpinner = () => {
             activeIndex.value
         }
         activeIndex.value--
-        console.log(activeIndex.value)
     }
 
     const setActiveIndex = (index: number) => {
