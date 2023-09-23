@@ -8,6 +8,9 @@ dependencies:
   '@chenfengyuan/vue-countdown':
     specifier: '2'
     version: 2.1.2(vue@3.3.4)
+  js-confetti:
+    specifier: ^0.11.0
+    version: 0.11.0
   vue:
     specifier: '3'
     version: 3.3.4
@@ -4224,6 +4227,10 @@ packages:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
     dev: true
+
+  /js-confetti@0.11.0:
+    resolution: {integrity: sha512-Hc7I3VI4r4H0nq5q/oQK+JJwGoYRYVHK72fGk8E9Ay1dbh+aiZ9yl0yFp1K4oYeq7YFDQAndYChwqLPA3QWQuA==}
+    dev: false
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}

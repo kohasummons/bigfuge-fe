@@ -1,5 +1,3 @@
-<script setup>
-</script>
 <template>
     <main class="bg-[#ECECEC] relative h-screen px-3 max-w-md mx-auto lg:py-10 py-3">
         <spinConfig/>

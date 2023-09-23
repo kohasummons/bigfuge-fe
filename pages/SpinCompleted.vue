@@ -1,4 +1,22 @@
 <script setup>
+import JSConfetti from 'js-confetti';
+
+const jsConfetti = new JSConfetti();
+const confettiConfig = {
+    emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+}
+
+
+onMounted(() => {
+    jsConfetti.addConfetti(confettiConfig);
+})
+
+useHead({
+  link: [
+    { rel: "preload", as: "image", href: "/spin-completed-image.png" }
+  ]
+})
+
 const router = useRouter();
 const { spinRPM, spinTime_min, spinTime_sec, setActiveIndex } = useSetSpinner();
 
@@ -23,7 +41,7 @@ const handleNavigatetoSpin = () => {
         </header>
         <section>
             <div class="select-none">
-                <div class="mb-16"><img src="../public/spin-completed-image.png" alt="Spin Completed"></div>
+                <div class="mb-16"><img src="/spin-completed-image.png" alt="Spin Completed"></div>
                 <h2 class=" text-4xl font-bold text-[#f55f45] text-center">Spin Completed.</h2>
                 <p class="text-base mt-2 text-center text-[#b3b3b3dc]">Woohoo! BigFuge spun your sample at <br /> {{ spinRPM.value }} RPM for {{ spinTime_min.value }} Min {{ spinTime_sec.value }} seconds.</p>
             </div>
